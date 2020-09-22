@@ -1,0 +1,882 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": "-- Grafana --",
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "gnetId": null,
+  "graphTooltip": 0,
+  "id": 9,
+  "links": [],
+  "panels": [
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 0
+      },
+      "hiddenSeries": false,
+      "id": 15,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "percentage": false,
+      "pluginVersion": "7.1.5",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "round(increase(avalanche_C_accepted_count{job=\"avalanchego\"}[1m]))",
+          "interval": "",
+          "legendFormat": "Accepted",
+          "refId": "A"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "C-Chain Accepted Blocks in Last Minute",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:2806",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "$$hashKey": "object:2807",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "description": "Measures how many of each kind of message are received per second on the C-Chain.",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {},
+          "mappings": [
+            {
+              "from": "",
+              "id": 0,
+              "text": "Healthy",
+              "to": "",
+              "type": 1,
+              "value": "200"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 12,
+        "y": 0
+      },
+      "hiddenSeries": false,
+      "id": 6,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "percentage": false,
+      "pluginVersion": "7.1.5",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "rate(avalanche_C_handler_pull_query_count{job=\"avalanchego\"}[1m])",
+          "interval": "",
+          "legendFormat": "pull query",
+          "refId": "A"
+        },
+        {
+          "expr": "rate(avalanche_C_handler_push_query_count{job=\"avalanchego\"}[1m])",
+          "interval": "",
+          "legendFormat": "push query",
+          "refId": "B"
+        },
+        {
+          "expr": "rate(avalanche_C_handler_chits_count{job=\"avalanchego\"}[1m])",
+          "interval": "",
+          "legendFormat": "chits",
+          "refId": "C"
+        },
+        {
+          "expr": "rate(avalanche_C_handler_accepted_count{job=\"avalanchego\"}[1m])",
+          "interval": "",
+          "legendFormat": "accepted",
+          "refId": "D"
+        },
+        {
+          "expr": "rate(avalanche_C_handler_get_count{job=\"avalanchego\"}[1m])",
+          "interval": "",
+          "legendFormat": "get",
+          "refId": "E"
+        },
+        {
+          "expr": "rate(avalanche_C_handler_put_count{job=\"avalanchego\"}[1m])",
+          "interval": "",
+          "legendFormat": "put",
+          "refId": "F"
+        },
+        {
+          "expr": "rate(avalanche_C_handler_multiput_count{job=\"avalanchego\"}[1m])",
+          "interval": "",
+          "legendFormat": "multiput",
+          "refId": "G"
+        },
+        {
+          "expr": "rate(avalanche_C_handler_get_ancestors_count{job=\"avalanchego\"}[1m])",
+          "interval": "",
+          "legendFormat": "get ancestors",
+          "refId": "H"
+        },
+        {
+          "expr": "rate(avalanche_C_handler_get_failed_count{job=\"avalanchego\"}[1m])",
+          "interval": "",
+          "legendFormat": "get failed",
+          "refId": "I"
+        },
+        {
+          "expr": "rate(avalanche_C_handler_query_failed_count{job=\"avalanchego\"}[1m])",
+          "interval": "",
+          "legendFormat": "query failed",
+          "refId": "J"
+        },
+        {
+          "expr": "rate(avalanche_C_handler_get_accepted_count{job=\"avalanchego\"}[1m])",
+          "interval": "",
+          "legendFormat": "get accepted",
+          "refId": "K"
+        },
+        {
+          "expr": "rate(avalanche_C_handler_get_ancestors_failed_count{job=\"avalanchego\"}[1m])",
+          "interval": "",
+          "legendFormat": "get ancestors failed",
+          "refId": "L"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "C-Chain Messages Received per Second",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "label": "Messages received/s",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": true,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {},
+          "mappings": [
+            {
+              "from": "",
+              "id": 0,
+              "text": "Healthy",
+              "to": "",
+              "type": 1,
+              "value": "200"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 8
+      },
+      "hiddenSeries": false,
+      "id": 9,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": false,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "percentage": false,
+      "pluginVersion": "7.1.5",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "avalanche_C_processing{job=\"avalanchego\"}",
+          "interval": "",
+          "legendFormat": "Transactions",
+          "refId": "A"
+        },
+        {
+          "expr": "avalanche_X_vtx_processing{job=\"avalanchego\"}",
+          "interval": "",
+          "legendFormat": "Vertices",
+          "refId": "B"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "C-Chain Processing Blocks",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "label": "Transactions",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": false
+        },
+        {
+          "format": "short",
+          "label": "Vertices",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": false
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "description": "Percentage of queries for which we receive chits on time.",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 9
+      },
+      "hiddenSeries": false,
+      "id": 11,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "percentage": false,
+      "pluginVersion": "7.1.5",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "(increase(avalanche_C_handler_chits_count{job=\"avalanchego\"}[2m]) + 1) / (increase(avalanche_C_handler_chits_count{job=\"avalanchego\"}[2m]) + increase(avalanche_C_handler_query_failed_count{job=\"avalanchego\"}[2m]) + 1)",
+          "instant": false,
+          "interval": "",
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "C-Chain Percentage of Successful Queries",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "description": "Measures how much of each second is being spent handling different kinds of messages on the C-Chain.\nThe value for chits, for example, is the number of seconds spent handling chits messages per second, over the last 30 seconds.",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 0,
+        "y": 16
+      },
+      "hiddenSeries": false,
+      "id": 5,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "percentage": false,
+      "pluginVersion": "7.1.5",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "rate(avalanche_C_handler_pull_query_sum{job=\"avalanchego\"}[1m])/1000000000",
+          "interval": "",
+          "legendFormat": "pull query",
+          "refId": "A"
+        },
+        {
+          "expr": "rate(avalanche_C_handler_push_query_sum{job=\"avalanchego\"}[1m])/1000000000",
+          "interval": "",
+          "legendFormat": "push query",
+          "refId": "B"
+        },
+        {
+          "expr": "rate(avalanche_C_handler_chits_sum{job=\"avalanchego\"}[1m])/1000000000",
+          "interval": "",
+          "legendFormat": "chits",
+          "refId": "C"
+        },
+        {
+          "expr": "rate(avalanche_C_handler_accepted_sum{job=\"avalanchego\"}[1m])/1000000000",
+          "interval": "",
+          "legendFormat": "accepted",
+          "refId": "D"
+        },
+        {
+          "expr": "rate(avalanche_C_handler_get_sum{job=\"avalanchego\"}[1m])/1000000000",
+          "interval": "",
+          "legendFormat": "get",
+          "refId": "E"
+        },
+        {
+          "expr": "rate(avalanche_C_handler_put_sum{job=\"avalanchego\"}[1m])/1000000000",
+          "interval": "",
+          "legendFormat": "put",
+          "refId": "F"
+        },
+        {
+          "expr": "rate(avalanche_C_handler_multiput_sum{job=\"avalanchego\"}[1m])/1000000000",
+          "interval": "",
+          "legendFormat": "multiput",
+          "refId": "G"
+        },
+        {
+          "expr": "rate(avalanche_C_handler_get_ancestors_sum{job=\"avalanchego\"}[1m])/1000000000",
+          "interval": "",
+          "legendFormat": "get ancestors",
+          "refId": "H"
+        },
+        {
+          "expr": "rate(avalanche_C_handler_get_failed_sum{job=\"avalanchego\"}[1m])/1000000000",
+          "interval": "",
+          "legendFormat": "get failed",
+          "refId": "I"
+        },
+        {
+          "expr": "rate(avalanche_C_handler_query_failed_sum{job=\"avalanchego\"}[1m])/1000000000",
+          "interval": "",
+          "legendFormat": "query failed",
+          "refId": "J"
+        },
+        {
+          "expr": "rate(avalanche_C_handler_get_accepted_sum{job=\"avalanchego\"}[1m])/1000000000",
+          "interval": "",
+          "legendFormat": "get accepted",
+          "refId": "K"
+        },
+        {
+          "expr": "rate(avalanche_C_handler_get_ancestors_failed_sum{job=\"avalanchego\"}[1m])/1000000000",
+          "interval": "",
+          "legendFormat": "get ancestors failed",
+          "refId": "L"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "C-Chain Message Handling Time (Total)",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "label": "seconds/second",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "description": "Measures how long each kind of request on the C-Chain takes to handle.\nThe value for chits, for example, is how long, in seconds, it takes to handle a chits message.",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {},
+          "mappings": [
+            {
+              "from": "",
+              "id": 0,
+              "text": "Healthy",
+              "to": "",
+              "type": 1,
+              "value": "200"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 12,
+        "y": 17
+      },
+      "hiddenSeries": false,
+      "id": 7,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "percentage": false,
+      "pluginVersion": "7.1.5",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "rate(avalanche_C_handler_pull_query_sum{job=\"avalanchego\"}[1m])/rate(avalanche_C_handler_pull_query_count{job=\"avalanchego\"}[1m])/1000000000",
+          "interval": "",
+          "legendFormat": "pull query",
+          "refId": "A"
+        },
+        {
+          "expr": "rate(avalanche_C_handler_push_query_sum{job=\"avalanchego\"}[1m])/rate(avalanche_C_handler_push_query_count{job=\"avalanchego\"}[1m])/1000000000",
+          "interval": "",
+          "legendFormat": "push query",
+          "refId": "B"
+        },
+        {
+          "expr": "rate(avalanche_C_handler_chits_sum{job=\"avalanchego\"}[1m])/rate(avalanche_C_handler_chits_count{job=\"avalanchego\"}[1m])/1000000000",
+          "interval": "",
+          "legendFormat": "chits",
+          "refId": "C"
+        },
+        {
+          "expr": "rate(avalanche_C_handler_accepted_sum{job=\"avalanchego\"}[1m])/rate(avalanche_C_handler_accepted_count{job=\"avalanchego\"}[1m])/1000000000",
+          "interval": "",
+          "legendFormat": "accepted",
+          "refId": "D"
+        },
+        {
+          "expr": "rate(avalanche_C_handler_get_sum{job=\"avalanchego\"}[1m])/rate(avalanche_C_handler_get_count{job=\"avalanchego\"}[1m])/1000000000",
+          "interval": "",
+          "legendFormat": "get",
+          "refId": "E"
+        },
+        {
+          "expr": "rate(avalanche_C_handler_put_sum{job=\"avalanchego\"}[1m])/rate(avalanche_C_handler_put_count{job=\"avalanchego\"}[1m])/1000000000",
+          "interval": "",
+          "legendFormat": "put",
+          "refId": "F"
+        },
+        {
+          "expr": "rate(avalanche_C_handler_multiput_sum{job=\"avalanchego\"}[1m])/rate(avalanche_C_handler_multiput_count{job=\"avalanchego\"}[1m])/1000000000",
+          "interval": "",
+          "legendFormat": "multiput",
+          "refId": "G"
+        },
+        {
+          "expr": "rate(avalanche_C_handler_get_ancestors_sum{job=\"avalanchego\"}[1m])/rate(avalanche_C_handler_get_ancestors_count{job=\"avalanchego\"}[1m])/1000000000",
+          "interval": "",
+          "legendFormat": "get ancestors",
+          "refId": "H"
+        },
+        {
+          "expr": "rate(avalanche_C_handler_get_failed_sum{job=\"avalanchego\"}[1m])/rate(avalanche_C_handler_get_failed_count{job=\"avalanchego\"}[1m])/1000000000",
+          "interval": "",
+          "legendFormat": "get failed",
+          "refId": "I"
+        },
+        {
+          "expr": "rate(avalanche_C_handler_query_failed_sum{job=\"avalanchego\"}[1m])/rate(avalanche_C_handler_query_failed_count{job=\"avalanchego\"}[1m])/1000000000",
+          "interval": "",
+          "legendFormat": "query failed",
+          "refId": "J"
+        },
+        {
+          "expr": "rate(avalanche_C_handler_get_accepted_sum{job=\"avalanchego\"}[1m])/rate(avalanche_C_handler_get_accepted_count{job=\"avalanchego\"}[1m])/1000000000",
+          "interval": "",
+          "legendFormat": "get accepted",
+          "refId": "K"
+        },
+        {
+          "expr": "rate(avalanche_C_handler_get_ancestors_failed_sum{job=\"avalanchego\"}[1m])/rate(avalanche_C_handler_get_ancestors_failed_count{job=\"avalanchego\"}[1m])/1000000000",
+          "interval": "",
+          "legendFormat": "get ancestors failed",
+          "refId": "L"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "C-Chain Message Handling Time (per Message)",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "label": "seconds",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    }
+  ],
+  "schemaVersion": 26,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "now-6h",
+    "to": "now"
+  },
+  "timepicker": {
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ]
+  },
+  "timezone": "",
+  "title": "C-Chain",
+  "uid": "eE8nd3dGm",
+  "version": 3
+}
