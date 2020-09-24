@@ -217,7 +217,7 @@
           "refId": "F"
         },
         {
-          "expr": "rate(avalanche_P_handler_multiput_count{job=\"avalanchego\"}[1m])",
+          "expr": "rate(avalanche_P_handler_multi_put_count{job=\"avalanchego\"}[1m])",
           "interval": "",
           "legendFormat": "multiput",
           "refId": "G"
@@ -781,7 +781,7 @@
           "refId": "F"
         },
         {
-          "expr": "rate(avalanche_P_handler_multiput_sum{job=\"avalanchego\"}[1m])/rate(avalanche_P_handler_multiput_count{job=\"avalanchego\"}[1m])/1000000000",
+          "expr": "rate(avalanche_P_handler_multiput_sum{job=\"avalanchego\"}[1m])/rate(avalanche_P_handler_multi_put_count{job=\"avalanchego\"}[1m])/1000000000",
           "interval": "",
           "legendFormat": "multiput",
           "refId": "G"
